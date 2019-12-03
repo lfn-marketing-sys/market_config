@@ -20,7 +20,7 @@ spring:
       min-idle: 0
   datasource:
     name: dev
-    url: jdbc:mysql://139.159.204.78:3306/gem_distribution?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://139.159.204.78:3306/market_sys?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
     username: erp
     password: JFerp2018!v5
     type: com.alibaba.druid.pool.DruidDataSource
@@ -50,7 +50,7 @@ mybatis:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://gem:123456@localhost:9011/eureka
+      defaultZone: http://market:123456@localhost:9011/eureka
   instance:
     lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
     lease-renewal-interval-in-seconds: 5    #设置心跳时长
@@ -67,5 +67,3 @@ hystrix:
 ribbon:
   ConnectTimeout: 5000
   ReadTimeout: 10000
-yangao:
-  test: 1234@!32
