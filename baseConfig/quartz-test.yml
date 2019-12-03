@@ -1,0 +1,43 @@
+server:
+  max-http-header-size: 10240
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://gem:123456@192.168.40.59:9011/eureka
+  instance:
+    lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
+    lease-renewal-interval-in-seconds: 5    #设置心跳时长
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+spring:
+  datasource:
+    name: dev
+    url: jdbc:mysql://172.26.156.33:8635/tx-manager?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: happy
+    password: happy-mix
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 5
+    maxWait: 60000
+    minIdle: 10
+    timeBetweenEvictionRunsMillis: 2000
+    minEvictableIdleTimeMillis: 600000
+    validationQuery: select 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8

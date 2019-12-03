@@ -1,0 +1,34 @@
+zuul:
+  host:
+    connect-timeout-millis: 615000
+    socket-timeout-millis: 660000
+  ignored-services: '*'
+  routes:
+    web-server:
+      path: /webserver/**
+      sensitiveHeaders:
+      serviceId: webserver
+    auth-server:
+      path: /auth-server/**
+      sensitiveHeaders:
+      serviceId: auth-server
+    tools:
+      path: /tools/**
+      sensitiveHeaders:
+      serviceId: tools
+  add-proxy-headers: true
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 5000
+ribbon:
+  ConnectTimeout: 610000
+  ReadTimeout: 610000
+demo:
+  yanghao:
+    test1: true
+    test2: 1
+    test3: abc

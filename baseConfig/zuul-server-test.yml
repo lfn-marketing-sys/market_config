@@ -1,0 +1,51 @@
+server:
+  tomcat:
+    accesslog:
+      directory: /data/logs/zuul/historyRunLog/access
+      enabled: true
+      pattern: common
+      prefix: zuul-access
+      suffix: .log
+      rotate: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://gem:123456@gem-dist-eureka:9011/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
+    lease-renewal-interval-in-seconds: 5    #设置心跳时长
+zuul:
+  host:
+    connect-timeout-millis: 615000
+    socket-timeout-millis: 660000
+  ignored-services: '*'
+  routes:
+    web-server:
+      path: /webserver/**
+      sensitiveHeaders:
+      serviceId: webserver
+    auth-server:
+      path: /auth-server/**
+      sensitiveHeaders:
+      serviceId: auth-server
+    tools:
+      path: /tools/**
+      sensitiveHeaders:
+      serviceId: tools
+  add-proxy-headers: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+ribbon:
+  ConnectTimeout: 20000
+  ReadTimeout: 20000
+logging:
+  level:
+    org.springframework: info
+    cn.lfn.gem.dist.mappers: debug
+  config: classpath:log4j2-${spring.profiles.active}1.yml

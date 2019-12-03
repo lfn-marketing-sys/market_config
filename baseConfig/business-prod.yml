@@ -1,0 +1,66 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  main:
+    allow-bean-definition-overriding: true
+server:
+  max-http-header-size: 10240
+  tomcat:
+    accesslog:
+      directory: /data/logs/web
+      enabled: true
+      pattern: common
+      prefix: web-access
+      suffix: .log
+      rotate: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://happymix:20190415@localhost:8761/eureka
+  instance:
+    lease-expiration-duration-in-seconds: 90  #超过多少时间删除服务
+    lease-renewal-interval-in-seconds: 30    #设置心跳时长
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+feign:
+  hystrix:
+    enabled: true
+pay:
+  weixin:
+    appid: wx6a9ed7e30ba12e49
+    appSecret: d0f5bbbde4d1f993645b0a6746fb17c8
+    mchId: 1509776891
+    key: 149b8628f007408d99ad32132520caa2
+    ip: 47.112.22.91
+    notifyUrl: https://www.zberp.fun/wechat-member/api/circleMall/notifyWeiXinPay.do
+    refundUrl: https://www.zberp.fun/wechat-member/api/circleMall/notifyWeiXinRefund.do
+    sandboxNotifyUrl: http://sjq.zhubaogongyuan.net/wechat-member/api/circleMall/notifyWeiXinPay.do
+    certFilePath: /data/happy/wechat_cert/apiclient_cert.p12
+    useSandbox: false
+# 认证地址 zuul地址转发
+auth-server: http://127.0.0.1:60003/auth-server
+security:
+  oauth2:
+    client:
+      client-id: CLIENT_USER_WEXIN
+      client-secret: 123456
+      access-token-uri: ${auth-server}/oauth/token
+    resource:
+      id: oauth2_resouce_user_weixin
+      user-info-uri: ${auth-server}/user
+      # 是否使用token info ，两种认证方式选择user info 禁用tokeninfo
+      prefer-token-info: false
+logging:
+  level:
+    org.springframework: info
+    cn.lfn.gem.dist.mappers: debug
+  config: classpath:log4j2-${spring.profiles.active}.yml

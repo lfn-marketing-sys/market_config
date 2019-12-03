@@ -1,0 +1,22 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://gem:123456@gem-dist-eureka:9011/eureka
+  instance:
+    lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
+    lease-renewal-interval-in-seconds: 5    #设置心跳时长
+server:
+  max-http-header-size: 10240
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+feign:
+  hystrix:
+    enabled: true
