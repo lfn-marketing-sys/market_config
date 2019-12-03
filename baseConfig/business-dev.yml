@@ -20,18 +20,6 @@ ribbon:
 feign:
   hystrix:
     enabled: true
-pay:
-  weixin:
-    appid: wx6a9ed7e30ba12e49
-    appSecret: d0f5bbbde4d1f993645b0a6746fb17c8
-    mchId: 1509776891
-    key: 149b8628f007408d99ad32132520caa2
-    ip: 139.159.204.78
-    notifyUrl: http://happy.zberp.fun/wechat-member/api/circleMall/notifyWeiXinPay.do
-    refundUrl: http://happy.zberp.fun/wechat-member/api/circleMall/notifyWeiXinRefund.do
-    sandboxNotifyUrl: http://sjq.zhubaogongyuan.net/wechat-member/api/circleMall/notifyWeiXinPay.do
-    certFilePath: D://apiclient_cert.pem
-    useSandbox: true
 spring:
   redis:
     database: 0
@@ -78,4 +66,4 @@ mapper:
   identity: MYSQL
 mybatis:
   mapperLocations: classpath:mappers/*.xml
-  typeAliasesPackage: cn.lfn.gem.dist.webserver.base.entity
+  typeAliasesPackage: cn.lfn.market.business.base.entity
