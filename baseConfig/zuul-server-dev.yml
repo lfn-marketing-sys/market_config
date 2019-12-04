@@ -4,6 +4,10 @@ zuul:
     socket-timeout-millis: 660000
   ignored-services: '*'
   routes:
+    auth-server:
+      path: /auth-server/**
+      sensitiveHeaders:
+      serviceId: auth-server
     platform:
       path: /platform/**
       sensitiveHeaders:
@@ -27,8 +31,5 @@ zuul:
 ribbon:
   ConnectTimeout: 610000
   ReadTimeout: 610000
-demo:
-  yanghao:
-    test1: true
-    test2: 1
-    test3: abc
+
+
