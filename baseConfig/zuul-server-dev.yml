@@ -4,18 +4,18 @@ zuul:
     socket-timeout-millis: 660000
   ignored-services: '*'
   routes:
-    web-server:
-      path: /webserver/**
+    platform:
+      path: /platform/**
       sensitiveHeaders:
-      serviceId: webserver
-    auth-server:
-      path: /auth-server/**
+      serviceId: platform
+    wechat:
+      path: /wechat/**
       sensitiveHeaders:
-      serviceId: auth-server
-    tools:
-      path: /tools/**
+      serviceId: wechat
+    merchants:
+      path: /merchants/**
       sensitiveHeaders:
-      serviceId: tools
+      serviceId: merchants
   add-proxy-headers: true
 #hystrix:
 #  command:
