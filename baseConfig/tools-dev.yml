@@ -25,3 +25,57 @@ spring:
       max-idle: 8
       # 连接池中的最小空闲连接
       min-idle: 0
+message:
+  accessId: youraccessId
+  accessKey: yourAccessKey
+  endpoint: a
+  topic: cn-hangzhou
+  sign: 零烦恼科技
+  verification:
+    templateCode: SMS_133965889
+    long:
+      templateCode: SMS_133960824
+  advise:
+    templateCode: SMS_133975849
+    userp:
+      templateCode: SMS_133975855
+  signup:
+    novalidate:
+      templateCode: SMS_149390443
+    notify:
+      templateCode: SMS_150576408
+verificationCode:
+  timeout:
+    time: 300
+dis:
+  verificationCode:
+    timeout:
+      time: 7200
+#zyl2019 \u77ed\u4fe1
+system:
+  sms:
+    tencent:
+      # url: https://sms.jpark.vip
+      url: https://sms.zberp.net
+      username: huwei
+      password: q123456
+      secrect: 3ab8087e179f4d579e46f2cb48daa6af
+      sign: 零烦恼科技
+      template:
+        register: 3e197860-439e-42f6-941f-ad2280a171ca
+        presentPonint: 58814ac7-3236-40b0-856a-4a15dde3ae5b
+systemconstant:
+  qiniuInfo:
+    # http://p3094mi99.bkt.clouddn.com
+    qiniuDomain: http://img.zberp.net
+    qiniuPrefix: gem-dist/dev/
+    qiniuAccessKey: LYcegljfJYmar6F8Im2MASW87UP7jPkq9GFFQr0u
+    qiniuSecretKey: BtQU4rIu51ORxmmnheJUMaO7oQWQw5U8faYrOwDp
+    qiniuBucketName: erp2018
+  weixinInfo:
+    appid: wx6a9ed7e30ba12e49
+    secret: d0f5bbbde4d1f993645b0a6746fb17c8
+    #appid: wx3d27cc3626b44fc9
+    #secret: 7e880299b445852799b4d0377dec0a18
+    tokenUrl: https://api.weixin.qq.com/cgi-bin/token
+    wxacodeunlimitUrl: https://api.weixin.qq.com/wxa/getwxacodeunlimit
