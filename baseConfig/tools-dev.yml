@@ -79,3 +79,8 @@ systemconstant:
     #secret: 7e880299b445852799b4d0377dec0a18
     tokenUrl: https://api.weixin.qq.com/cgi-bin/token
     wxacodeunlimitUrl: https://api.weixin.qq.com/wxa/getwxacodeunlimit
+api:
+  map:
+    baidu:
+      url: http://api.map.baidu.com/geocoder/v2/?
+      key: 35bbf3142cb7e1197ab66475b36d651f    
