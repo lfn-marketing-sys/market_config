@@ -45,7 +45,7 @@ mapper:
   identity: MYSQL
 mybatis:
   mapperLocations: classpath:mappers/*.xml
-  typeAliasesPackage: cn.lfn.gem.dist.auth.base.entity
+  typeAliasesPackage: cn.lfn.market.auth.base.entity
       
 eureka:
   client:
