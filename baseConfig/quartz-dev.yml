@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://gem:123456@localhost:9011/eureka
+      defaultZone: http://market:123456@localhost:9011/eureka
   instance:
     lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
     lease-renewal-interval-in-seconds: 5    #设置心跳时长
@@ -20,9 +20,9 @@ ribbon:
 spring:
   datasource:
     name: dev
-    url: jdbc:mysql://192.168.40.70:8635/tx-manager?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-    username: happy
-    password: happy-mix
+    url: jdbc:mysql://139.159.204.78:3306/market_sys?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: erp
+    password: JFerp2018!v5
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     filters: stat

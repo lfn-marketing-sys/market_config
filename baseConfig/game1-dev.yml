@@ -66,4 +66,4 @@ mapper:
   identity: MYSQL
 mybatis:
   mapperLocations: classpath:mappers/*.xml
-  typeAliasesPackage: cn.lfn.market.business.base.entity
+  typeAliasesPackage: cn.lfn.market.game1.base.entity
