@@ -4,6 +4,10 @@ zuul:
     socket-timeout-millis: 660000
   ignored-services: '*'
   routes:
+    auth-server:
+      path: /auth-server/**
+      sensitiveHeaders:
+      serviceId: auth-server
     platform:
       path: /platform/**
       sensitiveHeaders:
