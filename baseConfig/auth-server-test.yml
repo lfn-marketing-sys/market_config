@@ -1,10 +1,24 @@
-
+server:
+  max-http-header-size: 10240
+  tomcat:
+    accesslog:
+      directory: /data/logs/oauth_server/historyRunLog/access
+      enabled: true
+      pattern: common
+      prefix: auth-server-access
+      suffix: .log
+      rotate: true
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  main:
+    allow-bean-definition-overriding: true  
   redis:
     database: 0
     timeout: 10000
     # Redis服务器地址
-    host: gem-dist-redis
+    host: market-sys-redis
     # Redis服务器连接端口
     port: 6379
     # Redis服务器连接密码（默认为空）
@@ -20,8 +34,7 @@ spring:
       min-idle: 0
   datasource:
     name: dev
-    url: jdbc:mysql://gem-dist-mysql8:3306/gem_distribution?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
-    #url: jdbc:mysql://localhost:8636/gem_distribution?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://market-sys-mysql8:3306/market-sys?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
     username: root
     password: JFerp2018!v5
     type: com.alibaba.druid.pool.DruidDataSource
@@ -51,7 +64,7 @@ mybatis:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://gem:123456@gem-dist-eureka:9011/eureka
+      defaultZone: http://market:123456@market-sys-eureka:9011/eureka
   instance:
     lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
     lease-renewal-interval-in-seconds: 5    #设置心跳时长

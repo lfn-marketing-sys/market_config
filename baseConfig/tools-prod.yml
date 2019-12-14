@@ -11,7 +11,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://happymix:20190415@localhost:8761/eureka
+      defaultZone: http://market:123456@market-sys-eureka:9011/eureka
   instance:
     lease-expiration-duration-in-seconds: 90  #超过多少时间删除服务
     lease-renewal-interval-in-seconds: 30    #设置心跳时长
@@ -30,20 +30,20 @@ spring:
     database: 0
     timeout: 10000
     # Redis服务器地址
-    host: localhost
+    host: market-sys-redis
     # Redis服务器连接端口
     port: 6379
     # Redis服务器连接密码（默认为空）
-    password: o7r2FkapLfHzbQ==
+    password:
     # 连接池最大连接数（使用负值表示没有限制）
     pool:
-      max-active: 300
+      max-active: 8
       # 连接池最大阻塞等待时间（使用负值表示没有限制）
       max-wait: -1
       # 连接池中的最大空闲连接
-      max-idle: 100
+      max-idle: 8
       # 连接池中的最小空闲连接
-      min-idle: 50
+      min-idle: 0
 message:
   accessId: youraccessId
   accessKey: yourAccessKey

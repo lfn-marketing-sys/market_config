@@ -1,26 +1,29 @@
-
+server:
+  tomcat:
+    accesslog:
+      directory: /data/logs/wechat/historyRunLog/access
+      enabled: true
+      pattern: common
+      prefix: tools-access
+      suffix: .log
+      rotate: true
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://market:123456@localhost:9011/eureka
+      defaultZone: http://market:123456@market-sys-eureka:9011/eureka
   instance:
     lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
     lease-renewal-interval-in-seconds: 5    #设置心跳时长
-api:
-  map:
-    baidu:
-      url: http://api.map.baidu.com/geocoder/v2/?
-      key: 35bbf3142cb7e1197ab66475b36d651f
 spring:
   redis:
     database: 0
     timeout: 10000
     # Redis服务器地址
-    host: localhost
+    host: market-sys-redis
     # Redis服务器连接端口
     port: 6379
     # Redis服务器连接密码（默认为空）
-    password: 123456
+    password:
     # 连接池最大连接数（使用负值表示没有限制）
     pool:
       max-active: 8
@@ -30,57 +33,8 @@ spring:
       max-idle: 8
       # 连接池中的最小空闲连接
       min-idle: 0
-message:
-  accessId: youraccessId
-  accessKey: yourAccessKey
-  endpoint: a
-  topic: cn-hangzhou
-  sign: 零烦恼科技
-  verification:
-    templateCode: SMS_133965889
-    long:
-      templateCode: SMS_133960824
-  advise:
-    templateCode: SMS_133975849
-    userp:
-      templateCode: SMS_133975855
-  signup:
-    novalidate:
-      templateCode: SMS_149390443
-    notify:
-      templateCode: SMS_150576408
-verificationCode:
-  timeout:
-    time: 300
-dis:
-  verificationCode:
-    timeout:
-      time: 7200
-#zyl2019 \u77ed\u4fe1
-system:
-  sms:
-    tencent:
-      # url: https://sms.jpark.vip
-      url: https://sms.zberp.net
-      username: huwei
-      password: q123456
-      secrect: 3ab8087e179f4d579e46f2cb48daa6af
-      sign: 零烦恼科技
-      template:
-        register: 3e197860-439e-42f6-941f-ad2280a171ca
-        presentPonint: 58814ac7-3236-40b0-856a-4a15dde3ae5b
-systemconstant:
-  qiniuInfo:
-    # http://p3094mi99.bkt.clouddn.com
-    qiniuDomain: http://img.zberp.net
-    qiniuPrefix: gem-dist/dev/
-    qiniuAccessKey: LYcegljfJYmar6F8Im2MASW87UP7jPkq9GFFQr0u
-    qiniuSecretKey: BtQU4rIu51ORxmmnheJUMaO7oQWQw5U8faYrOwDp
-    qiniuBucketName: erp2018
-  weixinInfo:
-    appid: wx6a9ed7e30ba12e49
-    secret: d0f5bbbde4d1f993645b0a6746fb17c8
-    #appid: wx3d27cc3626b44fc9
-    #secret: 7e880299b445852799b4d0377dec0a18
-    tokenUrl: https://api.weixin.qq.com/cgi-bin/token
-    wxacodeunlimitUrl: https://api.weixin.qq.com/wxa/getwxacodeunlimit
+auth-switch: true
+swagger-Switch: true
+swagger2:
+  host: test-market-sys.zberp.net
+  oauth-token-Url: https://${swagger2.host}/auth-server/oauth/token

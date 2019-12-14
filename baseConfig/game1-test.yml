@@ -1,24 +1,25 @@
-server:
-  max-http-header-size: 10240
-  tomcat:
-    accesslog:
-      directory: /data/logs/web
-      enabled: true
-      pattern: common
-      prefix: web-access
-      suffix: .log
-      rotate: true
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://gem:123456@gem-dist-eureka:9011/eureka
+      defaultZone: http://market:123456@market-sys-eureka:9011/eureka
   instance:
     lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
     lease-renewal-interval-in-seconds: 5    #设置心跳时长
-openapi:
-  gem:
-    url: http://test.openapi.jpark.vip
-    appId: 1003    
+server:
+  max-http-header-size: 10240
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+feign:
+  hystrix:
+    enabled: true    
 spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -29,7 +30,7 @@ spring:
     database: 0
     timeout: 10000
     # Redis服务器地址
-    host: gem-dist-redis
+    host: market-sys-redis
     # Redis服务器连接端口
     port: 6379
     # Redis服务器连接密码（默认为空）
@@ -45,8 +46,7 @@ spring:
       min-idle: 0
   datasource:
     name: dev
-    url: jdbc:mysql://gem-dist-mysql8:3306/gem_distribution?allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
-    #url: jdbc:mysql://localhost:8636/gem_distribution?allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://market-sys-mysql8:3306/market-sys?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
     username: root
     password: JFerp2018!v5
     type: com.alibaba.druid.pool.DruidDataSource
@@ -71,49 +71,4 @@ mapper:
   identity: MYSQL
 mybatis:
   mapperLocations: classpath:mappers/*.xml
-  typeAliasesPackage: cn.lfn.gem.dist.webserver.base.entity
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 15000
-ribbon:
-  ConnectTimeout: 10000
-  ReadTimeout: 10000
-feign:
-  hystrix:
-    enabled: true
-pay:
-  weixin:
-    appid: wx6a9ed7e30ba12e49
-    appSecret: d0f5bbbde4d1f993645b0a6746fb17c8
-    mchId: 1509776891
-    key: 149b8628f007408d99ad32132520caa2
-    ip: 39.98.71.133
-    notifyUrl: http://test.zberp.fun/wechat-member/api/circleMall/notifyWeiXinPay.do
-    refundUrl: http://test.zberp.fun/wechat-member/api/circleMall/notifyWeiXinRefund.do
-    sandboxNotifyUrl: http://sjq.zhubaogongyuan.net/wechat-member/api/circleMall/notifyWeiXinPay.do
-    certFilePath: /data/happy/wechat_cert/apiclient_cert.p12
-    useSandbox: false
-swagger-Switch: false
-auth-switch: true
-# 认证地址 zuul地址转发
-auth-server: http://gem-dist-zuul:9001/auth-server
-security:
-  oauth2:
-    client:
-      client-id: CLIENT_SYSTEM_PLATFORM
-      client-secret: 123456
-      access-token-uri: ${auth-server}/oauth/token
-    resource:
-      id: oauth2_resouce_system_pc
-      user-info-uri: ${auth-server}/user
-      # 是否使用token info ，两种认证方式选择user info 禁用tokeninfo
-      prefer-token-info: false
-logging:
-  level:
-    org.springframework: info
-    cn.lfn.gem.dist.mappers: debug
-  config: classpath:log4j2-${spring.profiles.active}1.yml
+  typeAliasesPackage: cn.lfn.market.base.base.entity

@@ -14,26 +14,22 @@ zuul:
     socket-timeout-millis: 20000
   ignored-services: '*'
   routes:
-    wechat-member:
-      path: /wechat-member/**
-      sensitiveHeaders:
-      serviceId: wechat-member-web
-    wechat-assistant:
-      path: /wechat-assistant/**
-      sensitiveHeaders:
-      serviceId: wechat-assistant-web
-    pc-system:
-      path: /pc-system/**
-      sensitiveHeaders:
-      serviceId: pc-system-web
-    pc-circle:
-      path: /pc-circle/**
-      sensitiveHeaders:
-      serviceId: pc-circle-web
     auth-server:
       path: /auth-server/**
       sensitiveHeaders:
       serviceId: auth-server
+    platform:
+      path: /platform/**
+      sensitiveHeaders:
+      serviceId: platform
+    wechat:
+      path: /wechat/**
+      sensitiveHeaders:
+      serviceId: wechat
+    merchants:
+      path: /merchants/**
+      sensitiveHeaders:
+      serviceId: merchants
   add-proxy-headers: true
 hystrix:
   command:
@@ -48,12 +44,11 @@ ribbon:
 eureka:
   client:
     service-url:
-      defaultZone: http://happymix:20190415@localhost:8761/eureka
+      defaultZone: http://market:123456@market-sys-eureka:9011/eureka
   instance:
     lease-expiration-duration-in-seconds: 90  #超过多少时间删除服务 默认为90秒
     lease-renewal-interval-in-seconds: 30    #设置心跳时长  默认30秒
 logging:
   level:
     org.springframework: info
-    cn.lfn.gem.dist.mappers: debug
   config: classpath:log4j2-${spring.profiles.active}.yml

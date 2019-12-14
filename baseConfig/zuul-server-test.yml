@@ -10,7 +10,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://gem:123456@gem-dist-eureka:9011/eureka
+      defaultZone: http://market:123456@market-sys-eureka:9011/eureka
     registry-fetch-interval-seconds: 5
   instance:
     lease-expiration-duration-in-seconds: 10  #超过多少时间删除服务
@@ -21,18 +21,22 @@ zuul:
     socket-timeout-millis: 660000
   ignored-services: '*'
   routes:
-    web-server:
-      path: /webserver/**
-      sensitiveHeaders:
-      serviceId: webserver
     auth-server:
       path: /auth-server/**
       sensitiveHeaders:
       serviceId: auth-server
-    tools:
-      path: /tools/**
+    platform:
+      path: /platform/**
       sensitiveHeaders:
-      serviceId: tools
+      serviceId: platform
+    wechat:
+      path: /wechat/**
+      sensitiveHeaders:
+      serviceId: wechat
+    merchants:
+      path: /merchants/**
+      sensitiveHeaders:
+      serviceId: merchants
   add-proxy-headers: true
 hystrix:
   command:
@@ -47,5 +51,4 @@ ribbon:
 logging:
   level:
     org.springframework: info
-    cn.lfn.gem.dist.mappers: debug
   config: classpath:log4j2-${spring.profiles.active}1.yml
