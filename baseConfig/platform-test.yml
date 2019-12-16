@@ -8,7 +8,7 @@ eureka:
 # 认证地址 zuul地址转发
 swagger-Switch: false
 auth-switch: true
-auth-server: http://market-sys.zberp.net/auth-server
+auth-server: market-sys.zberp.net/auth-server
 security:
   oauth2:
     client:
@@ -21,7 +21,7 @@ security:
       # 是否使用token info ，两种认证方式选择user info 禁用tokeninfo
       prefer-token-info: false
 swagger2:
-  host: http://market-sys.zberp.net
+  host: market-sys.zberp.net
   oauth-token-Url: http://${swagger2.host}/auth-server/oauth/token  
 spring:
   redis:
