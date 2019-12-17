@@ -19,6 +19,7 @@ spring:
       # 连接池中的最小空闲连接
       min-idle: 0
   datasource:
+    connectionInitSqls: set names utf8mb4 
     name: dev
     url: jdbc:mysql://139.159.204.78:3306/market_sys?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
     username: erp
