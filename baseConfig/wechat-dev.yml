@@ -25,3 +25,16 @@ spring:
       max-idle: 8
       # 连接池中的最小空闲连接
       min-idle: 0
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+feign:
+  hystrix:
+    enabled: true
