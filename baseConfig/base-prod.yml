@@ -45,6 +45,8 @@ spring:
     username: market_sys
     password: boirEYc5Tl8vPZD7pLBGceAY
     type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      connectionInitSqls: set names utf8mb4      
     driver-class-name: com.mysql.cj.jdbc.Driver
     filters: stat
     maxActive: 20
