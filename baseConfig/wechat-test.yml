@@ -38,3 +38,8 @@ swagger-Switch: true
 swagger2:
   host: test-market-sys.zberp.net
   oauth-token-Url: https://${swagger2.host}/auth-server/oauth/token
+weixin:
+  notifyUrl: http://yukx.ittun.com/wechat/wechat/pay/notifyWeiXinPay.do
+  sandboxNotifyUrl: http://yukx.ittun.com/wechat/wechat/pay/notifyWeiXinPay.do
+  useSandbox: true
+  ip: 192.168.40.136 
