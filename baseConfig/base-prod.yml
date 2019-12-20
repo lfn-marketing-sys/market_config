@@ -72,5 +72,5 @@ mybatis:
 weixin:
   notifyUrl: https://market-sys.zberp.net/wechat/wechat/pay/notifyWeiXinPay.do
   sandboxNotifyUrl: https://market-sys.zberp.net/wechat/wechat/pay/notifyWeiXinPay.do
-  useSandbox: true
+  useSandbox: false
   ip: 192.168.40.136
