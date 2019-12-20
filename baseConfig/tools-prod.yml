@@ -15,6 +15,19 @@ eureka:
   instance:
     lease-expiration-duration-in-seconds: 90  #超过多少时间删除服务
     lease-renewal-interval-in-seconds: 30    #设置心跳时长
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+feign:
+  hystrix:
+    enabled: true    
 api:
   map:
     baidu:
