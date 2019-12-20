@@ -33,3 +33,8 @@ spring:
       max-idle: 8
       # 连接池中的最小空闲连接
       min-idle: 0
+weixin:
+  notifyUrl: http://yukx.ittun.com/wechat/wechat/pay/notifyWeiXinPay.do
+  sandboxNotifyUrl: http://yukx.ittun.com/wechat/wechat/pay/notifyWeiXinPay.do
+  useSandbox: true
+  ip: 192.168.40.136
