@@ -38,3 +38,16 @@ weixin:
   sandboxNotifyUrl: https://yukx.ittun.com/wechat/wechat/pay/notifyWeiXinPay.do
   useSandbox: true
   ip: 192.168.40.136
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000  
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+feign:
+  hystrix:
+    enabled: true
