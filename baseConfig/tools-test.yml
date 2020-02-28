@@ -85,7 +85,7 @@ system:
   sms:
     tencent:
       # url: https://sms.jpark.vip
-      url: http://sms.zhubaogongyuan.cn:888
+      url: http://sms.zhubaogongyuan.net:888
       username: huwei
       password: q123456
       secrect: 16ae42166d9c45dcbf0a6bd99bda5b19
