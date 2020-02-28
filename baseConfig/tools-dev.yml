@@ -70,10 +70,9 @@ system:
     tencent:
       # url: https://sms.jpark.vip
       # url: https://sms.zberp.net
-      url: http://localhost:8050
+      url: http://sms.zhubaogongyuan.cn:888
       username: huwei
       password: q123456
-      # secrect: 3ab8087e179f4d579e46f2cb48daa6af
       secrect: 16ae42166d9c45dcbf0a6bd99bda5b19
       sign: 零烦恼科技
       template:
