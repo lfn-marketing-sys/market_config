@@ -7,6 +7,9 @@ server:
       prefix: tools-access
       suffix: .log
       rotate: true
+swagger2:
+  host: market-sys.zberp.net
+  oauth-token-Url: https://${swagger2.host}/auth-server/oauth/token      
 eureka:
   client:
     serviceUrl:
