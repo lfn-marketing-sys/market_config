@@ -19,6 +19,10 @@ zuul:
   host:
     connect-timeout-millis: 615000
     socket-timeout-millis: 660000
+    maxTotalConnections: 1000
+    maxPerRouteConnections: 1000
+  semaphore:
+    max-semaphores: 5000
   ignored-services: '*'
   routes:
     auth-server:
