@@ -44,6 +44,9 @@ weixin:
   useSandbox: true
   ip: 192.168.40.136
 hystrix:
+  threadpool:
+    default:
+        coreSize: 500
   command:
     default:
       execution:
