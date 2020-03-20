@@ -43,6 +43,9 @@ zuul:
       serviceId: merchants
   add-proxy-headers: true
 hystrix:
+  threadpool:
+    default:
+        coreSize: 500
   command:
     default:
       execution:
