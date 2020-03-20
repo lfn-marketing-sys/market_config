@@ -8,6 +8,9 @@ eureka:
 server:
   max-http-header-size: 10240
 hystrix:
+  threadpool:
+    default:
+        coreSize: 500
   command:
     default:
       execution:

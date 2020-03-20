@@ -74,6 +74,9 @@ feign:
   hystrix:
     enabled: true
 hystrix:
+  threadpool:
+    default:
+        coreSize: 500
   command:
     default:
       execution:
