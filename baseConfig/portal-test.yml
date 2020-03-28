@@ -86,3 +86,7 @@ ribbon:
 feign:
   hystrix:
     enabled: true
+wechat:
+  platform:
+    componentAppid: aq
+    componentAppSecret: aa
