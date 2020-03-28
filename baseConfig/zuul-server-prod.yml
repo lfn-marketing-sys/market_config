@@ -26,6 +26,10 @@ zuul:
       path: /wechat/**
       sensitiveHeaders:
       serviceId: wechat
+    portal:
+      path: /portal/**
+      sensitiveHeaders:
+      serviceId: portal
     merchants:
       path: /merchants/**
       sensitiveHeaders:
