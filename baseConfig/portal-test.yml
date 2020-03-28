@@ -88,5 +88,5 @@ feign:
     enabled: true
 wechat:
   platform:
-    componentAppid:
-    componentAppSecret:
+    componentAppid: aq
+    componentAppSecret: aa
