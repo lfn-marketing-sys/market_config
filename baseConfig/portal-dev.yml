@@ -73,3 +73,7 @@ weixin:
   sandboxNotifyUrl: http://yukx.ittun.com/wechat/wechat/pay/notifyWeiXinPay.do
   useSandbox: true
   ip: 192.168.40.136
+wechat:
+  platform:
+    componentAppid:
+    componentAppSecret:
