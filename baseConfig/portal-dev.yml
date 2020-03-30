@@ -77,3 +77,5 @@ wechat:
   platform:
     componentAppid: aq
     componentAppSecret: aa
+    token: aa
+    encodingAesKey: aa
