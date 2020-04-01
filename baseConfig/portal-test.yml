@@ -65,6 +65,18 @@ mybatis:
   typeAliasesPackage: cn.lfn.market.base.base.entity
 auth-switch: true
 swagger-Switch: true
+auth-server: http://test-market-sys.zberp.net/auth-server
+security:
+  oauth2:
+    client:
+      client-id: MARKET_PLATFORM
+      client-secret: 123456
+      access-token-uri: ${auth-server}/oauth/token
+    resource:
+      id: oauth2_resouce_pc_market_sys
+      user-info-uri: ${auth-server}/user
+      # 是否使用token info ，两种认证方式选择user info 禁用tokeninfo
+      prefer-token-info: false
 swagger2:
   host: test-market-sys.zberp.net
   oauth-token-Url: https://${swagger2.host}/auth-server/oauth/token
