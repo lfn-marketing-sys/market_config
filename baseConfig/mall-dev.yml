@@ -69,3 +69,8 @@ mapper:
 mybatis:
   mapperLocations: classpath:mappers/*.xml
   typeAliasesPackage: cn.lfn.market.sys.common.entity
+weixin:
+  notifyUrl: http://yukx.ittun.com/wechat/wechat/pay/notifyWeiXinPay.do
+  sandboxNotifyUrl: http://yukx.ittun.com/wechat/wechat/pay/notifyWeiXinPay.do
+  useSandbox: true
+  ip: 192.168.40.136
