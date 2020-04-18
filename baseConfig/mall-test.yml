@@ -46,9 +46,9 @@ spring:
       min-idle: 0
   datasource:
     name: dev
-    url: jdbc:mysql://market-sys-mysql8:3306/market-mall?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
-    username: market_sys
-    password: boirEYc5Tl8vPZD7pLBGceAY
+    url: jdbc:mysql://market-sys-mysql8:3306/market_mall?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
+    username: root
+    password: JFerp2018!v5
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       connectionInitSqls: set names utf8mb4      
