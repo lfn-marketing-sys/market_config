@@ -44,6 +44,16 @@ spring:
       max-idle: 8
       # 连接池中的最小空闲连接
       min-idle: 0
+  rabbitmq:
+    host: market-sys-rabbitmq
+    port: 5672
+    username: lfn_test
+    password: lfn_test
+    virtual-host: /lfn_test
+    # 开启生产者发布至交换机确认回调
+    publisher-confirms: true
+    # 开启交换机至队列失败回调
+    publisher-returns: true
   datasource:
     name: dev
     url: jdbc:mysql://market-sys-mysql8:3306/market_mall?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useSSL=false
