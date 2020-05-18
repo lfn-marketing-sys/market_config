@@ -104,7 +104,7 @@ logging:
 systemconstant:
   qiniuInfo:
     # http://p3094mi99.bkt.clouddn.com
-    qiniuDomain: http://img.zberp.cn
+    qiniuDomain: https://img.zberp.net
     qiniuPrefix: market/test/
     qiniuAccessKey: LYcegljfJYmar6F8Im2MASW87UP7jPkq9GFFQr0u
     qiniuSecretKey: BtQU4rIu51ORxmmnheJUMaO7oQWQw5U8faYrOwDp
