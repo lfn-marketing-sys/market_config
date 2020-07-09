@@ -21,6 +21,11 @@ feign:
   hystrix:
     enabled: true
 spring:
+  cloud:
+    config:
+      override-none: true
+      allow-override: true
+      override-system-properties: false
   redis:
     database: 0
     timeout: 10000
